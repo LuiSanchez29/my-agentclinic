@@ -1,14 +1,29 @@
 {
   "name": "agentclinic",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "description": "A clinic where AI agents get relief from their humans.",
+  "private": true,
   "scripts": {
-    "build": "tsc"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "db:seed": "tsx src/db/seed.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "next": "^15.1.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "devDependencies": {
-    "typescript": "^5.5.3"
-  },
-  "private": true
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5.5.3",
+    "vitest": "^5.0.4"
+  }
 }
