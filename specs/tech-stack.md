@@ -40,6 +40,25 @@ Why SQLite:
 | Database       | SQLite                          |
 | Target runtime | Node.js + modern browsers       |
 
+## Testing & CI (added in replan)
+
+- **Test runner:** Vitest. Tests live in `tests/` and use an isolated temp
+  SQLite file (via `DATABASE_PATH`) so they never touch `agentclinic.db`.
+- **Automation:** a `prebuild` script runs the suite before every build; a
+  `PostFileSave` Kiro hook runs it on `.ts`/`.tsx` saves.
+- **CI:** GitHub Actions (`.github/workflows/ci.yml`) runs install → native
+  rebuild → typecheck → test → build on every push and PR to `main`. Pinned to
+  **Node 22 LTS** — newer Node has a native-addon regression that segfaults
+  `better-sqlite3` under Vitest workers.
+
+## Known gaps / future
+
+- No linter or formatter (ESLint/Prettier) configured yet — worth adding for a
+  teaching codebase.
+- No ORM — direct SQL is intentional for clarity, but Drizzle/Kysely could be
+  layered in later.
+- No authentication or distinct "staff" entity yet (see `mvp.md`).
+
 ## Principles
 
 - **One language, one stack.** TypeScript everywhere; Next.js for both server
