@@ -1,7 +1,7 @@
 # Requirements — Ailments & Therapies
 
 **Phase:** Roadmap Phase 3
-**Status:** Draft for review
+**Status:** Done (implemented and verified)
 
 ## Goal
 
@@ -49,16 +49,20 @@ The `agents`, `ailments`, `therapies`, `appointments` tables already exist
 - `agent_ailments` — links an agent to an ailment (many-to-many).
   - `agent_id` → agents(id) ON DELETE CASCADE
   - `ailment_id` → ailments(id) ON DELETE CASCADE
-  - unique on (agent_id, ailment_id)
+  - composite primary key on (agent_id, ailment_id)
   - `noted_at` timestamp
 
 - `therapy_ailments` — links a therapy to an ailment (many-to-many).
   - `therapy_id` → therapies(id) ON DELETE CASCADE
   - `ailment_id` → ailments(id) ON DELETE CASCADE
-  - unique on (therapy_id, ailment_id)
+  - composite primary key on (therapy_id, ailment_id)
 
 No changes to existing columns. Schema additions use `IF NOT EXISTS` so the
 change is additive and safe to re-apply.
+
+> **As built:** the pair uniqueness is enforced with a composite PRIMARY KEY
+> (not a separate id + UNIQUE); this keeps `INSERT OR IGNORE` idempotent. The
+> relationship query functions live in `src/db/relationships.ts`.
 
 ## UX / routes
 

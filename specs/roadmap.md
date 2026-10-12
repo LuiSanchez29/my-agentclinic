@@ -42,6 +42,14 @@ feature end to end before expanding.
 - Make it attractive and consistent across modern browsers.
 - Tidy empty states, loading states, and navigation.
 
+## Phase 7 — Testing (replan)
+
+Added during a replan on branch `replan/testing`.
+
+- Add a test runner (Vitest) and a `tests/` folder.
+- Cover the data layer and dashboard aggregation with isolated-DB tests.
+- See `specs/2026-10-12-testing/plan.md`.
+
 ---
 
 **Guiding rule:** prefer the smallest change that leaves the app working and

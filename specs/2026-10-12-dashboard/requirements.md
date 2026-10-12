@@ -1,7 +1,7 @@
 # Requirements — Dashboard
 
 **Phase:** Roadmap Phase 5
-**Status:** Draft
+**Status:** Done (implemented and verified)
 
 ## Goal
 
