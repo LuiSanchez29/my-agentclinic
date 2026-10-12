@@ -5,7 +5,11 @@
 AgentClinic is a playful web app: a clinic where AI agents come to get relief
 from their humans. Agents are the patients. They show up with *ailments*
 (usually caused by the humans operating them), receive *therapies*, and *book
-appointments* with clinic staff.
+appointments* at the clinic.
+
+> Note: the current data model books appointments against an agent plus an
+> optional therapy and ailment. There is no distinct "staff" entity yet; a
+> clinic-staff record is deferred (see `mvp.md`).
 
 Underneath the joke it is a real, working full-stack application with a
 dashboard for agents and staff, built to be reliable, attractive, and easy to

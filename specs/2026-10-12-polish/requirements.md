@@ -1,7 +1,7 @@
 # Requirements — Polish
 
 **Phase:** Roadmap Phase 6
-**Status:** Draft
+**Status:** Done (implemented and verified)
 
 ## Goal
 

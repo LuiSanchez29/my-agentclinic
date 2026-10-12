@@ -1,7 +1,7 @@
 # Requirements — Appointments
 
 **Phase:** Roadmap Phase 4
-**Status:** Draft
+**Status:** Done (implemented and verified)
 
 ## Goal
 
