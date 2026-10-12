@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Run tests on save",
+      "trigger": "PostFileSave",
+      "description": "Runs the Vitest suite automatically whenever a TypeScript source or test file is saved.",
+      "matcher": "\\.(ts|tsx)$",
+      "action": {
+        "type": "command",
+        "command": "npm test",
+        "timeout": 120
+      }
+    }
+  ]
+}

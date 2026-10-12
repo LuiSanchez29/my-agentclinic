@@ -24,11 +24,18 @@ covered and regressions are caught before build.
   (desc), top ailments ranking.
 - `tests/format.test.ts` — `formatDateTime` unit tests.
 
-## Group 3 — Future (not yet)
+## Group 3 — Automation (done)
+
+- **Pre-build gate:** a `prebuild` npm script runs `vitest run` automatically
+  before every `npm run build`; a failing test blocks the build.
+- **Save hook:** `.kiro/hooks/test-on-save.json` (PostFileSave on `*.ts`/`*.tsx`)
+  runs `npm test` on save for fast feedback while editing.
+
+## Group 4 — Future (not yet)
 
 - Server Action tests (validation branches) via direct function calls.
 - Component/route tests with a React testing library + jsdom.
-- Wire `npm test` into a pre-build/CI step (and optionally a Kiro hook).
+- Wire `npm test` into CI once a remote/CI provider is set up.
 
 ## Notes / decisions
 
