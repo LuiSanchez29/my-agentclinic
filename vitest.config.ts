@@ -18,7 +18,7 @@ export default defineConfig({
     // per-file isolation so there is exactly one process and one connection.
     pool: "forks",
     poolOptions: {
-      forks: { singleFork: true, minForks: 1, maxForks: 1 },
+      forks: { singleFork: true },
     },
     isolate: false,
     fileParallelism: false,
