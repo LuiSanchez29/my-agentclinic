@@ -31,9 +31,17 @@ covered and regressions are caught before build.
 - **Save hook:** `.kiro/hooks/test-on-save.json` (PostFileSave on `*.ts`/`*.tsx`)
   runs `npm test` on save for fast feedback while editing.
 
-## Group 4 — Future (not yet)
+## Group 4 — Server Action tests (done)
 
-- Server Action tests (validation branches) via direct function calls.
+- `tests/actions.test.ts` — covers the create actions for agents, ailments,
+  therapies, and appointments: both validation-failure branches (returns error
+  state) and success paths (mutates the DB, then redirects).
+- `next/cache` and `next/navigation` are mocked; the `redirect` mock throws a
+  `NEXT_REDIRECT:<url>` sentinel so the success path is assertable.
+- 24 tests across 5 files.
+
+## Group 5 — Future (not yet)
+
 - Component/route tests with a React testing library + jsdom.
 - Wire `npm test` into CI once a remote/CI provider is set up.
 
